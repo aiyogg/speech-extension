@@ -5,30 +5,13 @@ import { createRequire } from "node:module";
 
 import fse from "fs-extra";
 import { build } from "esbuild";
-import { html } from "@esbuilder/html";
 import htmlPlugin from '@chialab/esbuild-plugin-html';
-// import {htmlPlugin} from '@jgoz/esbuild-plugin-html';
-// import {htmlPlugin} from '@craftamap/esbuild-plugin-html';
 import concurrently from "concurrently";
 import { GetInstalledBrowsers, BrowserPath } from "get-installed-browsers";
 import stylePlugin from "esbuild-style-plugin";
 import watch from "node-watch";
 
 import { getManifest } from "../src/manifest/index.mjs";
-
-const exampleOnLoadPlugin = {
-  name: 'example',
-  setup(build: any) {
-    build.onLoad({ filter: /.css$/ }, async (args: any) => {
-      console.log(args);
-
-      return {
-          contents: JSON.stringify("test"),
-          loader: 'css',
-      }
-    })
-  },
-}
 
 const require = createRequire(import.meta.url);
 
@@ -139,11 +122,9 @@ async function buildHtmlPage(name: string, entry: string, outdir: string, dev = 
       ".json": "json",
     },
     plugins: [
-      // html({
-      //   entryNames: "[name]-[hash]",
-      // }),
-      // exampleOnLoadPlugin,
-      htmlPlugin(),
+      htmlPlugin({
+        injectStylesAs: "link",
+      }),
       stylePlugin({
         postcss: {
           plugins: [
@@ -153,9 +134,6 @@ async function buildHtmlPage(name: string, entry: string, outdir: string, dev = 
           ],
         }
       }),
-      // CssModulesPlugin({
-      //   inject: true,
-      // }),
     ],
   });
 

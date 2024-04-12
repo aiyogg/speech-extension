@@ -27,9 +27,6 @@ devDependencies:
   '@chialab/esbuild-plugin-html':
     specifier: ^0.18.2
     version: 0.18.2(patch_hash=tlnzzr7xrxu7zrzqjllvfesfhq)
-  '@esbuilder/html':
-    specifier: ^0.0.6
-    version: 0.0.6(esbuild@0.17.19)
   '@types/chrome':
     specifier: ^0.0.209
     version: 0.0.209
@@ -424,17 +421,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /@esbuilder/html@0.0.6(esbuild@0.17.19):
-    resolution: {integrity: sha512-caniuc1M6v0FnnSlbUc73aiCkRP5m1i1/eJMne2JI4Fen2fOkIdmTx+x/XLt6JbwvD7ePldZtc+Y7Cgt10uioA==}
-    engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      esbuild: '>=0.14.42'
-    dependencies:
-      cheerio: 1.0.0-rc.12
-      esbuild: 0.17.19
-      tslib: 2.6.2
-    dev: true
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.56.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
