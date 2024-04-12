@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@chialab/esbuild-plugin-html@0.18.2':
+    hash: tlnzzr7xrxu7zrzqjllvfesfhq
+    path: patches/@chialab__esbuild-plugin-html@0.18.2.patch
+
 dependencies:
   '@types/webextension-polyfill':
     specifier: ^0.10.0
@@ -21,7 +26,7 @@ dependencies:
 devDependencies:
   '@chialab/esbuild-plugin-html':
     specifier: ^0.18.2
-    version: 0.18.2
+    version: 0.18.2(patch_hash=tlnzzr7xrxu7zrzqjllvfesfhq)
   '@esbuilder/html':
     specifier: ^0.0.6
     version: 0.0.6(esbuild@0.17.19)
@@ -156,7 +161,7 @@ packages:
       regenerator-runtime: 0.14.1
     dev: true
 
-  /@chialab/esbuild-plugin-html@0.18.2:
+  /@chialab/esbuild-plugin-html@0.18.2(patch_hash=tlnzzr7xrxu7zrzqjllvfesfhq):
     resolution: {integrity: sha512-8dBqIZIL1tkLYyMko+HY8b80QoDOIGlydbIQO8ALLv4e59UO0MGQjFG3RCD0V5sMbpjeNrJ3MCKz29wGL16Wrg==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -167,6 +172,7 @@ packages:
     dependencies:
       '@chialab/esbuild-rna': 0.18.2
     dev: true
+    patched: true
 
   /@chialab/esbuild-rna@0.18.2:
     resolution: {integrity: sha512-ckzskez7bxstVQ4c5cxbx0DRP2teldzrcSGQl2KPh1VJGdO2ZmRrb6vNkBBD5K3dx9tgTyvskWp4dV+Fbg07Ag==}
